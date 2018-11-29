@@ -1,0 +1,19 @@
+﻿@{
+	ViewBag.Title = "Result";
+}
+@model List<OrderedBankAccounts.Models.FileContentModel>
+<div class="row">
+	@if (Model != null)
+	{
+		foreach (var fileContent in Model)
+		{
+			foreach (var account in fileContent.Accounts)
+			{
+				<div>
+					@account.Key @account.Value
+				</div>
+			}
+			<br>
+		}
+	}
+</div>

@@ -1,0 +1,25 @@
+﻿@{
+	ViewBag.Title = "Add Text File";
+}
+
+@Html.ValidationSummary(true)
+<div class="row">
+	@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @id = "add-file-form", @autocomplete = "false", @enctype = "multipart/form-data" }))
+	{
+		<div>
+			<div class="header">
+				<h4>Add Text File</h4>
+			</div>
+
+			<div class="body">
+				<div>
+					<input type="file" name="file" id="file" />
+					<span class="help-block">@Html.ValidationMessage("file")</span>
+				</div>
+			</div>
+			<div>
+				<button type="submit" class="btn btn-primary">Kaydet</button>
+			</div>
+		</div>
+	}
+</div>
